@@ -1,0 +1,10 @@
+<ul class="intro">
+	<li><a href="/">Inicio</a></li>
+	<li><a href="/registro/">Registro</a></li>
+	[% IF c.user.nivel %]
+		<li><a href="/personas/lista">Lista de asistentes</a></li>
+		<li><a href="/personas/buscar">Buscar asistentes</a></li>
+	[% END %]		
+	<li><a href="/acerca/">Acerca de</a></li>
+	<li><a href="/logout/">Salir</a></li>
+</ul>

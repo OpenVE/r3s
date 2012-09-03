@@ -1,0 +1,67 @@
+0.8 2007-03-28 11:51:00
+	- versión para el I Encuentro Unefista con el SL
+	- bienvenido R3S a berlios.de
+	  (José Miguel Parrella Romero)
+
+0.7 2007-02-28 00:45:00
+	- agregando método de búsqueda
+	- ahora se puede confirmar asistencia por participante
+	- reportes en el método lista/
+	- varios bugfixes
+	- versión para el III Congreso Nacional de Software Libre
+	  (José Miguel Parrella Romero)
+
+0.6 2007-02-15 21:53:00
+	- cambiando a C::C::FB
+	- ahora hay una confirmación antes de registrarse
+	- se usa AJAX para la confirmación de asistencia
+	- varios bugfixes
+	  (José Miguel Parrella Romero)
+
+0.5 2007-02-12 23:58:00
+	- agregando metodos de modificacion y confirmacion
+	- mejoras en CSS
+	  (José Miguel Parrella Romero)
+
+0.4 2007-02-12 18:00:00
+	- agregando soporte multisedes para Registro y Lista
+	- algunos bugfixes
+	  (José Miguel Parrella Romero)
+	- agregando autenticación
+	  (Christian Sánchez)
+
+0.3.4 2007-02-10 23:04:00
+	- feature request: agregando campos multi-sede
+	- feature request: eliminando "ver más" en /personas/lista
+	- varios bugfixes
+	  (José Miguel Parrella Romero)
+
+0.3.3 2007-02-10 18:59:26
+	- cambiando para compliance XHTML 1.1
+	  (José Miguel Parrella Romero)
+
+0.3.2 2007-02-10 15:46:03
+	- cambiando a Crypt::GPG
+	- cambiando a jQuery
+	- agregando fieldsets
+	  (José Miguel Parrella Romero)
+
+0.3.1 2007-02-05 17:16:03
+	- agregando una nueva verificación en la lista de partcipantes.
+	- GPG es ahora opcional.
+	- varios bugfixes.
+	  (José Miguel Parrella Romero)
+
+0.3  2007-02-04 20:45:06
+	- los módulos de registro, verificación y certificado funcionan
+ 	  de la manera esperada. Este sistema es usable.
+	  (José Miguel Parrella Romero)
+
+0.2  2006-12-21 15:08:02
+	- el modulo de verificación funciona, muchos cambios en las hojas
+	  de estilo y el layout
+	  (José Miguel Parrella Romero)
+
+0.01  2006-12-19 15:18:57
+	- los modulos de registro y lista de participantes ya funcionan
+	  (José Miguel Parrella Romero)

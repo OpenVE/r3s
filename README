@@ -1,0 +1,88 @@
+R3S - el sistema pequeño para eventos grandes
+=============================================
+
+R3S es un sistema minimalista y simple para el registro de participantes de eventos
+de cualquier tipo y tamaño. Está escrito en Perl, utilizando el framework MVC Catalyst.
+
+Requisitos
+==========
+
+1. Catalyst reciente. En Debian Etch o Sid:
+	-> aptitude install libcatalyst-perl libcatalyst-modules-perl
+
+2. Las últimas versiones de los siguientes módulos de CPAN (y sus dependencias,
+   si aplican):
+	-> Mime::Lite::TT:HTML
+	-> Catalyst::Controller::FormBuilder
+
+3. Los siguientes módulos de CPAN, instalados con APT en sistemas basados en
+   Debian (Sid o Etch):
+	-> libdatetime-format-mail-perl
+
+4. Una base de datos soportada por Class::DBI (SQLite3, MySQL, PostgreSQL)
+	-> aptitude install mysql-server
+
+5. Locales es_VE.UTF-8 en tu sistema, y soporte para locales en Perl.
+
+6. Recuerda que para construir paquetes .deb a partir de módulos de CPAN puedes
+   usar: dh-make-perl --notest --install --cpan <MODULO>
+
+Instrucciones
+=============
+
+1. Ajusta registro.sql a tus necesidades
+	-> Si cambias los campos del formulario deberás también cambiar los archivos
+	   .fb (en YAML) que especifican los nombres de cada campo. El archivo de
+	   configuración está en texto plano y es sencillo editarlo.
+	-> Por los momentos no recomendamos cambiar bruscamente la estructura de la 
+	   BD sin ver primero el código. A pesar de que el código es agnóstico en
+	   cuanto al diseño de la BD, algunos campos son necesarios.
+
+2. Crea la base de datos con sqlite3 (o MySQL, o PostgreSQL, si editas el modelo)
+	-> Revisa el modelo para indicar el path de la base de datos,
+	   por defecto el buscará /tmp/registro-db.db
+
+3. Configura registro.yml a tu gusto
+	-> Si vas a usar GPG, asegúrate de tener la llave en pubring.gpg y
+	   secring.gpg en el directorio especificado en el archivo, y tener permisos
+	   adecuados para que el servidor Web lea las llaves.
+
+4. Corre script/registro_server.pl para iniciar la aplicación (o configura
+Apache con FastCGI o cualquier otra solución a tu gusto)
+	-> Si usas Debian, aptitude install libapache2-mod-perl2, y en tus archivos
+	   de configuración de Apache2:
+
+===================================================================================
+PerlSwitches -I/home/bureado/Registro/lib
+PerlModule Registro
+
+<VirtualHost *:80>
+        ServerName    faraday.g33k.com.ve
+        DocumentRoot  /home/bureado/Registro/root
+
+        <Location />
+            SetHandler          modperl
+            PerlResponseHandler Registro
+        </Location>
+
+    </VirtualHost>
+===================================================================================
+
+-> Comentarios
+
+CGI::FormBuilder es un excelente módulo para Perl que permite construir 
+formularios para la Web en muy pocos pasos. Actualmente hemos observado 
+un par de problemas con CGI::FB que han sido reportados a sus autores; 
+de esta forma también colaboramos en el mejoramiento del Software Libre 
+para las Comunidades en general.
+
+-> Créditos
+
+Ideas originales: Alejandro Garrido Mota y José Miguel Parrella Romero
+Desarrollo: José Miguel Parrella Romero y Christian Sánchez
+Pruebas y comentarios: equipo de UNPLUG (unplug.org.ve)
+
+-> Licencia
+
+Este programa puede ser redistribuído en los mismos términos de Perl. Este programa
+es compatible con el Decreto 3390 y la legislación venezolana vigente.

@@ -1,0 +1,22 @@
+[% PROCESS includes/header %]
+
+<div id="contenido">
+
+<div class="informacion">
+	<p>
+		Este evento se llevara a cabo en las instalaciones de la UNEFA sede CHUAO el próximo jueves 22 de marzo desde las 8:00 am hasta las 5:30pm.
+	</p>
+</div>
+
+       <ul class="intro">
+               <li><a href="/registro">Reg&iacute;strese</a> para participar en el [% c.config.evento %]</li>
+               <li><a href="/login">Login</a> para coordinadores del [% c.config.evento %]</li>
+       </ul>
+
+	<p style="text-align: justify;">
+		Extendemos una cordial invitación para que formes parte del <strong>“I Encuentro Unefista con el Software Libre”</strong>, cuyo objetivo principal es convocar a la población estudiantil de la UNEFA  a participar activamente e incentivarlos al uso de herramientas de Software Libre, promoviendo los valores y el espíritu comunitario con el cual se identifica. Este es un evento,<strong> </strong>organizado por el Grupo Unefista de Divulgación Científica Tecnológica<strong> (GUDICITE), </strong>el cual se encuentra enmarcado en el actual proceso de desarrollo tecnológico de Venezuela y rumbo al     <strong><a target="_blank" href="http://www.cnsl.org..ve/tiki-index.php">“3er  Congreso Nacional de Software Libre”</a></strong>.
+	</p>
+
+</div>
+
+[% PROCESS includes/footer %]

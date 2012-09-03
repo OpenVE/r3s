@@ -1,0 +1,51 @@
+[% PROCESS includes/header %]
+[% PROCESS includes/user %]
+[% PROCESS includes/menu %]
+
+<div id="contenido">
+
+[% IF mensaje %]
+<div class="error">
+	<p><strong>Mensaje del sistema:</strong> [% mensaje %] Si persisten los problemas, contacte a los <a href="mailto:[% c.config.contacto %]">organizadores</a> del evento con ese mensaje de error.</p>
+</div>
+[% END %]
+
+[% IF FormBuilder.submitted %]
+
+	[% UNLESS mensaje %]
+	<div class="informacion">
+		<p><strong>Por favor, verifique cuidadosamente toda la información introducida y presione Confirmar para continuar.</strong> Si desea corregir algún error, puede volver atrás haciendo <a href="javascript:history.back(1)">click aquí</a>.</p>
+	</div>
+
+	<ul>
+		<li><strong>Nombre:</strong> [% datos.nombre %]</li>
+		<li><strong>Apellidos:</strong> [% datos.apellido %]</li>
+		<li><strong>Correo:</strong> [% datos.correo %]</li>
+		[% IF datos.grupo %] <li><strong>Grupo:</strong> [% datos.grupo %]</li> [% END %]
+		[% IF datos.profesion %] <li><strong>Profesión:</strong> [% datos.profesion %]</li> [% END %]
+		[% IF datos.cert %]
+			<li><strong>Cédula:</strong> [% datos.cedula %]</li>
+			<li><strong>Núm. de Depósito:</strong> [% datos.deposito %]</li>
+			<li><strong>Fecha:</strong> [% datos.fecha %]</li>
+			<li><strong>Monto:</strong> [% datos.monto %]</li>
+		[% END %]
+	</ul>
+	[% END %]
+
+[% ELSE %]
+
+	[% UNLESS mensaje %]
+		<div class="informacion">
+			<p>A continuaci&oacute;n deber&aacute; introducir sus datos personales en el siguiente formulario. El sistema le informar&aacute; si ha introducido alg&uacute;n dato de forma incorrecta y le solicitar&aacute; que modifique dichos valores. Finalmente podr&aacute; enviar el formulario y recibir&aacute; un correo electr&oacute;nico de confirmaci&oacute;n con toda la informaci&oacute;n relevante. <strong>Por favor, verifique cuidadosamente toda la información introducida.</strong></p>
+		</div>
+	[% END %]
+
+[% END %]
+
+	<div class="registro-forms">
+		[% FormBuilder.render %]
+	</div>
+
+</div>
+
+[% PROCESS includes/footer %]

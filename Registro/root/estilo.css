@@ -1,0 +1,199 @@
+/* Generales */
+
+body {
+	font-family: Arial, sans-serif;
+	width: 95%;
+	background: #071C7F;
+}
+
+a {
+	color: #003399;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+h2 {
+	margin-top: 0;
+	margin-right: 0;
+}
+
+.confirmado {
+	font-weight: bold;
+	text-decoration: none;
+	color: green;
+}
+
+a:hover {
+	background: #FFFFE5;
+}
+
+ul {
+	list-style-image: url('/static/images/item.gif');
+}
+
+.sedes ul {
+	list-style-image: none;
+}
+
+.fb_label {
+	border: 1px dotted gray;
+	text-align: center;
+	font-family: Arial, sans-serif;
+	width: 60%;
+}
+
+.fb_field {
+	border: 1px dotted gray;
+	text-align: center;
+	font-family: Arial, sans-serif;
+}
+
+.fb_required {
+	font-weight: bold;
+}
+
+.fb_message {
+	font-weight: bold;
+	color: red;
+}
+
+.fb_invalid {
+	font-weight: bold;
+	color: red;
+}
+
+/* Menú */
+
+#menu {
+	width: 100%;
+	float: left;
+	background: white;
+	color: black;
+	border: 2px solid black;
+	text-align: center;
+}
+
+#menu p {
+	padding: 0;
+}
+
+/* Contenido */
+
+#contenido {
+	width: 100;
+	background: white;
+	padding: 10px;
+        border: 2px solid black;
+}
+
+/* CGI::FormBuilder */
+
+.fb_input {
+	width: 80%;
+}
+
+.submit {
+	text-align: center;
+	margin-top: 15px;
+}
+
+/* Footer */
+
+#footer {
+	font-size: small;
+	background: white;
+	color: black;
+	text-align: center;
+	border: 2px solid black;
+	float: left;
+	width: 100%;
+}
+
+/* Mensajes importantes */
+
+.error p {
+	margin-left: 40px;
+}
+
+.error {
+	background: url('http://tango.freedesktop.org/static/cvs/tango-icon-theme/32x32/status/dialog-error.png') #FFFFE5 no-repeat;
+	border: 1px solid #4682B4;
+	background-position: center left;
+}
+
+.informacion {
+	background: url('http://tango.freedesktop.org/static/cvs/tango-icon-theme/32x32/status/dialog-information.png') #FFFFE5 no-repeat;
+	border: 1px solid #4682B4;
+	background-position: center left;
+}
+
+.informacion p {
+	margin-left: 40px;
+}
+
+/* Formulario de registro */ 
+
+.registro-forms p {
+	margin-left: 40px;
+}
+
+.registro-forms {
+	text-align: center;
+	width: 100%;
+}
+
+.registro-forms table {
+	width: 100%;
+}
+
+.fb {
+	width: 100%;
+}
+
+/* Lista de personas */
+
+#personas-lista {
+	width: 100%;
+	text-align: center;
+}
+
+#lista { 
+	width: 100%;
+}
+
+#contenido td {
+	border: 1px dotted gray;
+	text-align: center;
+	font-family: Arial, sans-serif;
+}
+
+.contenido td {
+	font-family: Arial, sans-serif;
+}
+
+#header td {
+	background: #4682B4;
+	color: white;
+	font-weight: bold;
+}
+
+/* Formulario de registro */
+
+#Registro_pagos {
+	display: none;
+}
+
+legend {
+	font-weight: bold;
+	font-size: smaller;
+	background: #4282B5;
+	color: white;
+}
+
+#Registro_nombre_label {
+	width: 60%;
+}
+
+#Registro_sede_label {
+	width: 60%;
+}

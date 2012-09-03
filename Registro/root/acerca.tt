@@ -1,0 +1,15 @@
+[% PROCESS includes/header %]
+
+<div id="contenido">
+
+	<p>Esta aplicaci&oacute;n fue desarrollada utilizando el elegante framework MVC <a href="http://www.catalystframework.org/">Catalyst</a> escrito en el lenguaje de programaci&oacute;n <a href="http://www.perl.com/">Perl</a>.</p>
+	<p>Por defecto, esta aplicaci&oacute;n utiliza Class::DBI para manejar una base de datos SQLite v3, Template Toolkit con el helper TTSite y CGI::FormBuilder para manejar los formularios con validaci&oacute;n.</p>
+	<p>El m&oacute;dulo original de registro fue escrito por <a href="http://blog.mogaal.com/">Alejandro Garrido Mota</a>. Los dem&aacute;s m&oacute;dulos en 
+versi&oacute;n CGI fueron escritos por <a href="http://blog.mogaal.com/">Alejandro Garrido Mota</a> y <a href="http://www.bureado.com.ve/">Jose Miguel Parrella 
+Romero</a>, y fueron utilizados en la organizaci&oacute;n del IV Foro Mundial de Conocimiento Libre.</p>
+	<p>La reescritura del registro en Catalyst fue realizada integramente por <a href="http://www.bureado.com.ve/">Jos&eacute; Miguel Parrella Romero</a> para la organizaci&oacute;n del Tercer Congreso Nacional de Software Libre. <a href="http://g013m.com.ve/">Christian S&aacute;nchez</a> ha realizado contribuciones posteriores al desarrollo. Los miembros del canal #unplug de irc.unplug.org.ve han sido de gran ayuda buscando errores y dando sugerencias.</p>
+	<p>Los templates de esta aplicación cumplen con XHTML 1.1 y CSS, estándares del W3C. Gracias por apoyar los estándares abiertos.</p>
+
+</div>
+
+[% PROCESS includes/footer %]

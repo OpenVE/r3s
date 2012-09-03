@@ -1,0 +1,83 @@
+#
+# R3S - el sistema pequeño para eventos grandes
+# -> r3s.berlios.de
+#
+
+#
+# DATOS DEL EVENTO
+#
+
+# [!] Nombre del evento
+# (se utilizará en la presentación del texto)
+evento: I Conferencia Internacional de Diplomacia Eclesiástica
+
+# [!] Página Web del evento
+# (se utilizará para enlaces dentro de <a href>'s)
+eventouri: http://church.diplomacy.org/
+
+# [!] Logo del evento
+# (se presentará en el encabezado de las páginas)
+imagen: http://www.micram.de/bilder/shake_hand01.gif
+
+# Hoja de estilo CSS
+# (se aplicará a todo el sitio)
+#style: <ruta>
+
+# [!] Lugar del evento
+sitio: Genève
+
+# [!] Fecha del evento
+fecha: Julio 2009
+
+# [!] Nombre del comité organizador
+orgname: Diplothèque Marseille
+
+# [!] Página Web del comité organizador
+orguri: http://www.diplo-marseille.fr/
+
+# [!] Correo de contacto
+contacto: jean@diplo-marseille.fr
+
+# [!] Plantilla de los correos de confirmación
+#mailtemplate: <ruta>
+
+#
+# CERTIFICADOS Y FIRMAS DIGITALES
+#
+
+# ¿Desea firmar los certificados con GPG?
+gpg: 0
+
+# Especifique:
+#	- Directorio donde se encuentra el anillo
+#	  de llaves (gpg --homedir)
+#	- Key ID de la llave con la que firmará
+#	  los certificados (gpg --homedir <> --list-keys)
+#	- Contraseña de la llave con la que firmará
+#	  los certificados
+#gpgdir: <ruta>
+#gpgkeyid: <ID en la forma 0x...>
+#gpgpass: <passphrase>
+
+#
+# PARA USO INTERNO
+#
+
+# Nombre de la aplicación
+name: Registro
+
+# Codificación de caracteres
+encoding: UTF-8
+
+# Datos de autenticación
+authentication:
+ dbic:
+  user_class: Registro::Model::CDBI::Usuarios
+  user_field: correo
+  password_field: codigo
+
+# Lugar de almacenamiento de información sobre sesiones
+# (de forma predeterminada se usará el directorio /tmp)
+#session:
+#  storage: <ruta>
+

@@ -1,0 +1,34 @@
+# Formulario de entrada para el registro principal de datos.
+method: post
+name: Registro
+stylesheet: 1
+messages: :es_ES
+fields:
+  nombre:
+    label: Nombres
+  apellido:
+    label: Apellidos
+  correo:
+    label: Correo electr&oacute;nico
+  sede:
+    label: Sede(s) donde participar&aacute;
+  grupo:
+    label: Grupo de usuarios al que pertenece
+  conocimiento:
+    label: Nivel de conocimiento de GNU/Linux
+  grado:
+    label: Grado acad&eacute;mico
+  profesion:
+    label: Profesi&oacute;n
+  cert:
+    label: &iquest;Desea obtener el certificado impreso y el material POP?
+  cedula:
+    label: Cedula de Identidad (solo n&uacute;meros sin letras ni otros caracteres)
+  deposito:
+    label: &Uacute;ltimos diez d&iacute;gitos del n&uacute;mero de dep&oacute;sito
+  monto:
+    label: Monto cancelado
+  fecha:
+    label: Fecha del dep&oacute;sito (formato DD/MM/YYYY)
+
+submit: Confirmar

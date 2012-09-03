@@ -1,0 +1,49 @@
+[% PROCESS includes/header %]
+
+<div id="contenido">
+	[% IF mensaje %]
+	<div class="error">
+		<p><strong>[% mensaje %]</strong></p>
+	</div>
+	[% ELSE %]
+		[% UNLESS current %]
+		<div class="informacion">
+			<p>Busque participantes del [% c.config.evento %] especificando partes de su correo electrónico, apellido o código secreto.</p>
+		</div>
+		[% END %]
+	[% END %]
+
+	[% IF current %]
+	<div class="informacion" id="confirmado" style="display: none;">
+		<p><strong></strong></p>
+	</div>
+
+	<table id="lista">
+		<tr id="header"><td>Nombre</td><td>Apellido</td><td>Correo electr&oacute;nico</td><td>Ver</td></tr>
+		[% FOREACH element = current ; idu = element.id %]
+			<tr class="lista">
+			<td>[% element.nombre %]</td>
+			<td>[% element.apellido %]</td>
+			<td>[% element.correo %]</td>
+			<td><a href="/personas/ver/[% element.correo %]">Ver</a></td>
+			</tr>
+		[% END %]
+	</table>
+
+	<p style="text-align: center; margin: 0; margin-top: 5px;"><a href="javascript:history.back(1)">Ir atrás</a></p>
+
+	[% ELSE %]
+	<div id="personas-lista" style="text-align: center; margin-top: 15px;">
+		<form action="/personas/buscar">
+			<table style="text-align: center; width: 100%;">
+			<tr><td>Buscar por correo electrónico</td><td><input type="text" name="correo" /></td></tr>
+			<tr><td>Buscar por código secreto</td><td><input type="text" name="codigo" /></td></tr>
+			<tr><td>Buscar por apellido</td><td><input type="text" name="apellido" /></td></tr>
+			<tr><td colspan='2'><input type="submit" value="Buscar" /></td></tr>
+			</table>
+		</form>
+	</div>
+	[% END %]
+</div>
+
+[% PROCESS includes/footer %]

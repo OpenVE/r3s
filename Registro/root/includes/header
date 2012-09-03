@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html>
+
+<!--
+	Estructura y Estilos:
+	José Miguel Parrella Romero
+	con colaboración de Christian Sánchez.
+!-->
+
+<head>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+	<script type="text/javascript" src="/js/jquery.js"></script>
+	<title>[% c.config.evento %]</title>
+	[% IF c.config.style %]
+		<link rel="stylesheet" href="[% c.config.style %]" type="text/css" />
+	[% ELSE %]
+		<link rel="stylesheet" href="/estilo.css" type="text/css" />
+	[% END %]
+</head>
+
+<body>
+
+<table style="width: 100%; padding: 0; border: 0;" class="contenido">
+
+<tr>
+<td colspan=2 style="background: white; border: 2px solid black; padding: 0;">
+	<a href="/"><h1 style="margin: 0; margin-left: 5px;">I Encuentro Unefista con el Software Libre</h1></a>
+</td>
+</tr>
+
+<tr>
+
+[% IF c.user_exists %]
+<td style="float: left; background: white;">
+	[% INCLUDE includes/menu %]
+</td>
+[% ELSE %]
+<td style="float: left;">
+        <img src="/static/images/logo2.png" />
+</td>
+[% END %]
+
+<td style="vertical-align: top; padding: 0;">
+

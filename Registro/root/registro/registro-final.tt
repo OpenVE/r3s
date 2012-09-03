@@ -1,0 +1,20 @@
+[% PROCESS includes/header %]
+
+<div id="contenido">
+
+<div class="informacion">
+<p><strong>Atenci&oacute;n</strong>: su c&oacute;digo de registro es <strong>[% codigo %]</strong>. Gracias por registrarse en el [% c.config.evento %]. Se le ha enviado un correo electr&oacute;nico de confirmaci&oacute;n con informaci&oacute;n de su inter&eacute;s, por favor rev&iacute;selo y mant&eacute;ngalo como confirmaci&oacute;n de su registro.</p> 
+</div>
+
+<div class="registro-forms">
+<ul>
+	<li><strong>Nombre</strong> [% nombre %]</li>
+	<li><strong>Apellido</strong> [% apellido %]</li>
+	<li><strong>Correo</strong> [% correo %]</li>
+	<li><strong>C&oacute;digo de registro</strong> [% codigo %]</li>
+</ul>
+</div>
+
+</div>
+
+[% PROCESS includes/footer %]

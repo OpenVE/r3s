@@ -1,0 +1,127 @@
+# Formulario de entrada para el registro principal de datos.
+method: post
+name: Registro
+stylesheet: 1
+messages: :es_ES
+fields:
+  nombre:
+    label: Nombres
+    validate: /^[ a-zA-ZáéíóúÁÉÍÓÚñÑ]+$/
+    required: 1
+    message: Por favor verifique su nombre
+    fieldset: datos
+  apellido:
+    label: Apellidos
+    validate: /^[ a-zA-ZáéíóúÁÉÍÓÚñÑ]+$/
+    required: 1
+    message: Por favor verifique su apellido
+    fieldset: datos
+  correo:
+    label: Correo electr&oacute;nico
+    validate: EMAIL
+    required: 1
+    message: Por favor verifique su correo electrónico
+    fieldset: datos
+  sede:
+    label: Sede(s) donde participar&aacute;
+    type: checkbox
+    sortopts: num
+    required: 1
+    fieldset: evento
+    javascript: 0
+    multiple: 1
+    linebreaks: 1
+    columns: 2
+    class: sede
+  grupo:
+    label: Grupo de usuarios al que pertenece
+    validate: /^[ a-zA-ZáéíóúÁÉÍÓÚñÑ]+$/
+    message: Por favor verifique el campo Grupo de Usuarios
+    fieldset: datos
+  conocimiento:
+    label: Nivel de conocimiento de GNU/Linux
+    type: select
+    sortopts: num
+    required: 1
+    fieldset: datos
+    javascript: 0
+  grado:
+    label: Grado acad&eacute;mico
+    type: select
+    sortopts: num
+    required: 1
+    fieldset: datos
+    javascript: 0
+  profesion:
+    label: Profesi&oacute;n
+    validate: /^[ a-zA-ZáéíóúÁÉÍÓÚñÑ]+$/
+    required: 1
+    javascript: 0
+    message: Por favor verifique el campo Profesion
+    fieldset: datos
+  cert:
+    label: &iquest;Desea obtener el certificado impreso y el material POP?
+    options: Si
+    jsclick: $('#Registro_pagos').toggle();
+    fieldset: evento
+  cedula:
+    label: Cedula de Identidad (solo n&uacute;meros sin letras ni otros caracteres)
+    validate: /^\d\d\d\d\d\d(\d\d)?$/
+    message: Por favor verifique el campo Cedula de Identidad
+    fieldset: pagos
+  deposito:
+    label: &Uacute;ltimos diez d&iacute;gitos del n&uacute;mero de dep&oacute;sito
+    validate: /^\d\d\d\d\d\d\d\d\d\d?$/
+    message: Por favor verifique el campo Numero de Deposito
+    fieldset: pagos
+  monto:
+    label: Monto cancelado
+    validate: /^\d+$/
+    message: Por favor verifique el monto
+    fieldset: pagos
+  fecha:
+    label: Fecha del dep&oacute;sito (formato DD/MM/YYYY)
+    validate: EUDATE
+    fieldset: pagos
+    message: Por favor verifique el campo Fecha del Deposito
+
+fieldsets:
+	datos: Datos del participante
+	evento: Datos del evento
+	pagos: Datos del dep&oacute;sito
+
+fieldopts:
+  conocimiento:
+    options:
+      1: Nulo
+      2: Regular
+      3: Medio
+      4: Notable
+      5: Excelente
+
+fieldopts:
+  grado:
+    options:
+      1: Bachillerato
+      2: TSU o Tecnico
+      3: Pregrado universitario
+      4: Postgrado universitario
+
+fieldopts:
+  sede:
+    options:
+      1: 20/4 Falcón
+      2: 27/4 Carabobo
+      3: 04/5 Caracas
+      4: 11/5 Anzoátegui
+      5: 18/5 Sucre
+      6: 25/5 Monagas
+      7: 01/6 Bolívar
+      8: 08/6 Barinas
+      9: 15/6 Mérida
+      10: 22/6 Portuguesa
+      11: 29/6 Lara
+      12: 06/7 Trujillo
+      13: 20/7 Zulia
+
+submit: Registrarse

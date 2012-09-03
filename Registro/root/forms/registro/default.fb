@@ -1,0 +1,92 @@
+# Formulario de entrada para el registro principal de datos.
+method: post
+name: Registro
+stylesheet: 1
+messages: :es_ES
+fields:
+  nombre:
+    label: Nombres
+    validate: /^[ a-zA-ZáéíóúÁÉÍÓÚñÑ]+$/
+    required: 1
+    message: Por favor verifique su nombre
+    fieldset: datos
+  apellido:
+    label: Apellidos
+    validate: /^[ a-zA-ZáéíóúÁÉÍÓÚñÑ]+$/
+    required: 1
+    message: Por favor verifique su apellido
+    fieldset: datos
+  correo:
+    label: Correo electr&oacute;nico
+    validate: EMAIL
+    required: 1
+    message: Por favor verifique su correo electrónico
+    fieldset: datos
+  sede:
+    label: Sede(s) donde participar&aacute;
+    type: checkbox
+    sortopts: num
+    required: 1
+    fieldset: evento
+    javascript: 0
+    multiple: 1
+    linebreaks: 1
+    columns: 2
+    class: sede
+    value: 3
+    force: 1
+  grupo:
+    label: Grupo de usuarios al que pertenece
+    validate: /^[ a-zA-ZáéíóúÁÉÍÓÚñÑ\,]+$/
+    message: Por favor verifique el campo Grupo de Usuarios
+    fieldset: datos
+  conocimiento:
+    label: Nivel de conocimiento de GNU/Linux
+    type: select
+    sortopts: num
+    required: 1
+    fieldset: datos
+    javascript: 0
+  grado:
+    label: Grado acad&eacute;mico
+    type: select
+    sortopts: num
+    required: 1
+    fieldset: datos
+    javascript: 0
+  profesion:
+    label: Profesi&oacute;n
+    validate: /^[ a-zA-ZáéíóúÁÉÍÓÚñÑ]+$/
+    required: 1
+    javascript: 0
+    message: Por favor verifique el campo Profesion
+    fieldset: datos
+
+fieldsets:
+	datos: Datos del participante
+	evento: Datos del evento
+	pagos: Datos del dep&oacute;sito
+
+fieldopts:
+  conocimiento:
+    options:
+      1: Nulo
+      2: Regular
+      3: Medio
+      4: Notable
+      5: Excelente
+
+fieldopts:
+  grado:
+    options:
+      1: Bachillerato
+      2: TSU o Tecnico
+      3: Pregrado universitario
+      4: Postgrado universitario
+
+fieldopts:
+  sede:
+    options:
+      3: 04/5 Caracas
+
+submit: Registrarse

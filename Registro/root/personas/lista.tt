@@ -1,0 +1,62 @@
+[% PROCESS includes/header %]
+
+<div id="contenido">
+	[% IF mensaje %]
+	<div class="error">
+		<p><strong>[% mensaje %]</strong></p>
+	</div>
+	[% ELSE %]
+		[% UNLESS current %]
+		<div class="informacion">
+			<p>Éstas son las sedes del [% c.config.evento %]. Elija una de ellas para ver los participantes.</p>
+		</div>
+		[% END %]
+	[% END %]
+
+	[% IF current %]
+	<div class="informacion" id="confirmado" style="display: none;">
+		<p><strong></strong></p>
+	</div>
+
+	<p style="text-align: center;">Participantes registrados en la sede <strong>[% sede.nombre %]</strong> ([% sede.fecha %])</p>
+
+	<p style="text-align: center;"><strong>ATENCION</strong>: una vez que haga click en el boton Borrar, eliminara al usuario de la BD de participantes. Manejese con cuidado.</p>
+
+	<table id="lista">
+		<tr id="header"><td>Nombre</td><td>Apellido</td><td>Correo electr&oacute;nico</td><td>Ver</td><td>Confirmar</td><td>Borrar</td></tr>
+		[% FOREACH element = current %]
+			<tr id="[%element.correo %]row" class="lista">
+				<td>[% element.nombre %]</td>
+				<td>[% element.apellido %]</td>
+				<td>[% element.correo %]</td>
+				<td><a href="/personas/ver/[% element.correo %]">Ver</a></td>
+				<td><a id="[% element.id %]" onclick="$('#confirmado').hide() ; $.get('/personas/confirmar/[% element.correo %]/[% sede.id %]', function( data ) { $('#confirmado').toggle(); $('#confirmado strong').empty(); $('#confirmado strong').append(data); $('#[% element.id %]').empty(); $('#[% element.id %]').append('Confirmado'); $('#[% element.id %]').addClass('confirmado');  });">Confirmar</a></td>
+				<td><a onclick="$('#confirmado').hide() ; $.get('/personas/borrar/[% element.correo %]', function( data ) { $('#confirmado').toggle(); $('#confirmado strong').empty(); $('#confirmado strong').append(data); $('[% element.correo %]row').remove();  });">Borrar</td>
+			</tr>
+		[% END %]
+	</table>
+
+	<p style="text-align: center;">
+		<a href="javascript:history.back(1)">Ir atrás</a>
+		[% IF last %]
+		| <a href="/personas/lista/[% last %]">Ver m&aacute;s</a>
+		[% END %]
+	</p>
+	[% ELSE %]
+	<div id="personas-lista">
+		<ul class="sedes" style="text-align: left;">
+		[% FOREACH sede = sedes ; nombre = sede.nombre %]
+			<li>
+				<a href="/personas/lista/[% sede.id %]">[% sede.nombre %]</a> ([% sede.fecha %])
+				<ul>
+					<li>Participantes registrados <strong>[% partNum.$nombre %]</strong></li>
+					<li>Participantes confirmados <strong>[% partConf.$nombre %]</strong></li>
+				</ul>
+			</li>
+		[% END %]
+		</ul>
+	</div>
+	[% END %]
+</div>
+
+[% PROCESS includes/footer %]

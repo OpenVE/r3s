@@ -1,0 +1,27 @@
+[% PROCESS includes/header %]
+
+<div id="contenido">
+
+	[% IF mensaje %]
+		<div class="error">
+			<p><strong>[% mensaje %]</strong></p>
+		</div>
+	[% ELSE %]
+	        <div class="informacion" id="confirmado" style="display: none;">
+	                <p><strong></strong></p>
+	        </div>
+
+		<h2>Confirmar asistencia</h2>
+		<ul>
+		[% FOREACH key IN sedes.keys %]
+			<li><a onclick="$('#confirmado').hide() ; $.get('/personas/confirmar/[% correo %]/[% key %]', function( data ) { $('#confirmado').toggle(); $('#confirmado strong').empty(); $('#confirmado strong').append(data); $('#1').empty(); $('#1').append('Confirmado'); $('#1').addClass('confirmado');  });">[% sedes.$key %]</a></li>
+		[% END %]
+		</ul>
+			
+		<h2>Modificar datos</h2>
+		[% FormBuilder.render %]
+	[% END %]
+
+</div>
+
+[% PROCESS includes/footer %]

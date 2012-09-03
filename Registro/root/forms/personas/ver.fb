@@ -1,0 +1,24 @@
+method: post
+name: Registro
+stylesheet: 1
+messages: :es_ES
+fields:
+  nombre:
+    label: Nombres
+    validate: /^[ a-zA-ZáéíóúÁÉÍÓÚñÑ]+$/
+    required: 1
+    message: Por favor verifique su nombre
+    fieldset: datos
+  apellido:
+    label: Apellidos
+    validate: /^[ a-zA-ZáéíóúÁÉÍÓÚñÑ]+$/
+    required: 1
+    message: Por favor verifique su apellido
+    fieldset: datos
+
+fieldsets:
+	datos: Datos del participante
+	evento: Datos del evento
+	pagos: Datos del dep&oacute;sito
+
+submit: Actualizar

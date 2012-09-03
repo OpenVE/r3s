@@ -1,0 +1,19 @@
+<p>
+	Atención: [% nombre %] [% apellido %]
+</p>
+
+<p>
+	Usted (o alguien que usó su cuenta de correo) solicitó suscribir <tt>[% correo %]</tt> como participante del <strong>Encuentro Unefista con el 
+Software Libre</strong>. Si es así, le damos la más cordial bienvenida y lo esperamos en el evento el día 22 de Marzo de 2007.
+</p>
+
+<p>
+	Recuerde que, una vez haya asistido al evento, podrá imprimir un certificado de asistencia y llevarlo a la sede 
+principal de la UNEFA para su firma y validación. Para imprimirlo requerirá un código de seguridad, que la ha sido 
+asignado y generado en este momento: <strong>[% codigo%]</strong>
+</p>
+
+<p>
+Cordialmente,<br />
+Grupo Unefista de Divulgación Científico Tecnológica
+</p>

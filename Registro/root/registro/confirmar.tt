@@ -1,0 +1,35 @@
+[% PROCESS includes/header %]
+
+<div id="contenido">
+
+[% IF mensaje %]
+<div class="error">
+	<p><strong>Mensaje del sistema:</strong> [% mensaje %]. Si persisten los problemas, contacte a los <a href="mailto:[% c.config.contacto %]">organizadores</a> del evento con ese mensaje de error.</p>
+</div>
+[% ELSE %]
+<div class="informacion">
+	<p><strong>Por favor, verifique cuidadosamente toda la información introducida.</strong></p>
+</div>
+[% END %]
+
+<ul>
+	<li>Nombre: [% datos.nombre %]</li>
+	<li>Apellidos: [% datos.apellido %]</li>
+	<li>Correo: [% datos.correo %]</li>
+	<li>Grupo: [% datos.grupo %]</li>
+	<li>Profesión: [% datos.profesion %]</li>
+	[% IF datos.cert %]
+		<li>Cédula: [% datos.cedula %]</li>
+		<li>Núm. de Depósito: [% datos.deposito %]</li>
+		<li>Fecha: [% datos.fecha %]</li>
+		<li>Monto: [% datos.monto %]</li>
+	[% END %]
+</ul>
+
+<div>
+[% FormBuilder.render %]
+</div>
+
+</div>
+
+[% PROCESS includes/footer %]

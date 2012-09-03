@@ -1,0 +1,34 @@
+[% PROCESS includes/header %]
+
+<div id="contenido">
+
+<div class="informacion">
+	<p>Esta sección es solo para personal administrativo y organizadores del evento.</p>
+</div>
+
+[% IF error_msg %]
+<div class="error">
+	<p><strong>[% error_msg %]</strong></p>
+</div>
+[% END %]
+<form method="post" action="[% Catalyst.uri_for('/login') %]" style="margin-top: 10px;">
+      <table style="text-align: center; width: 100%;">
+        <tr>
+          <td>Correo Electr&oacute;nico:</td>
+          <td><input type="text" name="correo" size="40" /></td>
+        </tr>
+        <tr>
+          <td>C&oacute;digo:</td>
+          <td><input type="password" name="codigo" size="40" /></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+		<input type="submit" name="submit" value="Iniciar Sesion"/>
+	  </td>
+        </tr>
+      </table>
+</form>
+
+</div>
+
+[% PROCESS includes/footer %]

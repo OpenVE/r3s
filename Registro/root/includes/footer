@@ -1,0 +1,10 @@
+</td>
+</tr>
+</table>
+
+<div id="footer">
+	Organizado por <a href="[% c.config.orguri %]">[% c.config.orgname %]</a> | <a href="[% c.config.eventouri %]">Acerca del evento</a> | <a href="/acerca">Acerca del sistema de registro</a>
+</div>
+
+</body>
+</html>
